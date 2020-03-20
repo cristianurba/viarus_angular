@@ -1,0 +1,60 @@
+.container{
+    width: 375px;
+    height: 812px;
+     
+    position: relative;
+    margin: 3% auto;
+    
+    border: 1px solid lightgray;
+    border-radius: 12px;
+    /* font-family: Arial, Helvetica, sans-serif */
+    font-family: Poppins;
+    
+}
+
+.hero{
+    margin-top: 1em;
+}
+
+.intro{
+    width: 345px;
+    height: 153px;
+    
+    margin: 3em auto;
+
+    color: #3A4276;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5em;
+    padding-left: 7em;
+    /* font-weight: bold; */
+    
+}
+
+#register{
+    margin-bottom: 3em;
+    width: 157px;
+    height: 50px;
+    background: #BEE16D;
+    border-radius: 10px;
+    text-decoration: none;
+    text-align: center;
+    
+    font-size: 1em;
+    font-weight: bold;
+    color: #3A4276;
+}
+
+#login{
+    width: 157px;
+    height: 50px;
+    border: 3px solid #3A4276;
+    background-color: transparent;
+    border-radius: 10px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #3A4276;
+}
