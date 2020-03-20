@@ -8,7 +8,9 @@
     
     border: 1px solid black;
     border-radius: 12px;
-    font-family: Arial, Helvetica, sans-serif
+    /* font-family: Arial, Helvetica, sans-serif */
+    font-family: Poppins;
+    
 }
 
 .logo{
@@ -63,7 +65,7 @@ top: 74px;
     padding: 3em 5.5em;
 }
 
-.botonEnviarRegistro{
+.botonEnviarLogin{
     width: 157px;
     height: 50px;
     /* color: #212330;

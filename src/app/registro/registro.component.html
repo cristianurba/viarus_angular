@@ -1,1 +1,56 @@
-<p>registro works!</p>
+<div class="container">
+
+    <div class="logo">
+        <img src="../../assets/images/viarus (Stroke).svg" alt="">
+    </div>
+
+    <div class="formRegistro">
+        <form [formGroup]="registro" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" formControlName="name" placeholder="Introduce tu nombre...">
+                <p class="error" *ngIf="registro.controls.name.errors?.required && registro.controls.name.touched">
+                    El
+                    campo name es requerido</p>
+                <p class="error" *ngIf="registro.controls.name.errors?.maxlength && registro.controls.name.touched">
+                    El
+                    campo name debe tener una longitud máxima de
+                    {{ registro.controls.name.errors.maxlength.requiredLength }} caracteres y tú estás introduciendo
+                    {{ registro.controls.name.errors.maxlength.actualLength }}
+                </p>
+                <p class="error" *ngIf="registro.controls.name.errors?.minlength && registro.controls.name.touched">
+                    El
+                    campo name debe tener una longitud mínima de
+                    {{ registro.controls.name.errors.minlength.requiredLength }} caracteres y tú estás introduciendo
+                    {{ registro.controls.name.errors.minlength.actualLength }}
+                </p>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" class="form-control" formControlName="email" placeholder="Introduce tu email...">
+                <p class="error" *ngIf="registro.controls.email.errors?.pattern && registro.controls.email.touched">
+                    El email está mal escrito </p>
+            </div>
+            <div class="form-group">
+                <label for="">Password</label>
+                <input type="password" class="form-control" formControlName="password"
+                    placeholder="Introduce tu contraseña...">
+                <p class="error"
+                    *ngIf="registro.controls.password.errors?.pattern && registro.controls.password.touched">
+                    El campo password debe contener entre 4 y 12 caracteres, con al menos un número</p>
+            </div>
+            <div class="form-group">
+                <label for="">Repeat Password</label>
+                <input type="password" class="form-control" formControlName="repite_password"
+                    placeholder="Repite tu contraseña...">
+            </div>
+
+
+            <!-- FALTA EL VALIDADOR DE REPETIR CONTRASEÑA -->
+
+            <div class="boton">
+                <input type="submit" value="Register ->" class="botonEnviarRegistro" [disabled]="!registro.valid">
+            </div>
+        </form>
+    </div>
+</div>
