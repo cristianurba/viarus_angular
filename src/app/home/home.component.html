@@ -1,0 +1,20 @@
+<div class="container">
+
+    <div class="logo">
+        <img src="../../assets/images/viarus (Stroke).svg" alt="Viarus logo">
+    </div>
+
+    <div class="mynews">
+        <label>My news</label>
+
+        <div class="writeNews">
+            <input type="text" placeholder="Text your news here..." [(ngModel)]="mensaje.texto">
+            <button (click)="enviarMensaje()">+</button>
+        </div>
+    </div>
+
+    <div class="feed">
+        <h4>{{mensaje.autor}}</h4>
+        <p>{{mensaje.texto}}</p>
+    </div>
+</div>

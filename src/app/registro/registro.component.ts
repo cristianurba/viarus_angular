@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { UsuariosService } from '../usuarios.service';
+import { Router } from '@angular/router/router';
 
 @Component({
   selector: 'app-registro',
@@ -9,8 +11,10 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class RegistroComponent implements OnInit {
 
   registro: FormGroup;
+  errores: any[];
+  router: Router;
 
-  constructor() {
+  constructor(private usuariosService: UsuariosService) {
     this.registro = new FormGroup({
       name: new FormControl('', [
         Validators.required,
@@ -30,13 +34,24 @@ export class RegistroComponent implements OnInit {
 
       ])
     }, [this.passwordValidator]);
+
+    this.errores = [];
   }
 
   ngOnInit() {
   }
 
   onSubmit() {
-    console.log(this.registro.value)
+    this.usuariosService.registro(this.registro.value)
+      .then(response => {
+        this.router.navigate(['/home']);
+        console.log(response);
+
+      })
+      .catch(err => {
+        this.errores = err.error;
+      });
+
   }
 
   passwordValidator(form) {
