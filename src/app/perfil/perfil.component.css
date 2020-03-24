@@ -1,0 +1,86 @@
+.container{
+    
+    width: 375px;
+    height: 812px;
+     
+    position: relative;
+    margin: 3% auto;
+    
+    border: 1px solid black;
+    border-radius: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-y: auto;
+}
+
+.logo{
+    position: absolute;
+width: 242px;
+height: 62px;
+left: 67px;
+top: 74px;
+
+}
+
+.container .formRegistro{
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    position: absolute;
+    width: 325px;
+    height: 385px;
+    left: 23px;
+    top: 201px;
+}
+
+.container .formRegistro .form-group {
+    padding: 0.5em 0;
+}
+
+.container .formRegistro .form-group label{
+    color: #3A4276;
+    font-weight: bold;
+    display: block;
+    padding-bottom: .7em;
+}
+
+.container .formRegistro .form-group select{
+    list-style: none;
+    width: 325px;
+    height: 56px;
+    background-color: #F1F3F6;
+    border-radius: 12px;
+    color: #3A4276;
+    border: 1px solid white
+}
+
+.container .formRegistro .form-group input{
+    width: 325px;
+    height: 56px;
+    background-color: #F1F3F6;
+    border-radius: 12px;
+    color: #3A4276;
+    border: 1px solid white
+}
+
+.container .formRegistro .form-group input::placeholder{
+    border: 1px solid green;
+    margin-left: 1em;
+}
+
+.boton{
+    padding: 3em 5.5em;
+}
+
+.botonEnviarRegistro{
+    width: 157px;
+    height: 50px;
+    font-size: 1em;
+    
+
+    background: #BEE16D;
+    border-radius: 10px;
+}
+
+p.error{
+    color: red;
+}
