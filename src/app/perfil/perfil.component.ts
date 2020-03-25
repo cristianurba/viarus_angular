@@ -14,7 +14,10 @@ export class PerfilComponent implements OnInit {
   errores: any[];
   router: Router;
 
+  imagenSeleccionada: string;
+
   constructor(private usuariosService: UsuariosService) {
+    this.imagenSeleccionada = "chica_1.svg";
     this.registro = new FormGroup({
       name: new FormControl('', [
         Validators.required,
@@ -32,7 +35,10 @@ export class PerfilComponent implements OnInit {
       repite_password: new FormControl('', [
         Validators.required,
 
-      ])
+      ]),
+      image: new FormControl('', [
+        Validators.required,
+      ]),
     }, [this.passwordValidator]);
 
     this.errores = [];
@@ -64,4 +70,13 @@ export class PerfilComponent implements OnInit {
       return { passwordvalidator: { msg: 'Las contraseñas no coinciden' } };
     }
   }
+
+  handleChange($event) {
+
+    console.log($event.target.value);
+
+    this.imagenSeleccionada = $event.target.value;
+  }
+
+
 }
