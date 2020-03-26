@@ -30,8 +30,9 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     this.usuariosService.login(this.login.value).
       then(response => {
-        /* console.log(response['token']); */
+        console.log(response);
         localStorage.setItem('user-token', response['token']);
+        localStorage.setItem('userId', response['userId']);
         this.router.navigate(['/home']);
       })
       .catch(err => {

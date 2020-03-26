@@ -27,7 +27,7 @@
             </div>
             <div class="cuerpoMensaje">
                 <p id="textoMensaje">{{mensaje.mensaje}}</p>
-                <div class="botones">
+                <div class="botones" *ngIf="mensaje.fk_usuario == userId">
                     <img src="../../assets/images/papelera.svg" alt="Borrar Mensaje" (click)="borrarMensaje(mensaje)">
                     <img src="../../assets/images/edited.svg" alt="Editar Mensaje" (click)="editMensaje(mensaje)">
                 </div>

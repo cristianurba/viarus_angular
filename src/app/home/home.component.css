@@ -1,3 +1,5 @@
+
+
 .container{
     
     width: 375px;
@@ -44,7 +46,7 @@ cursor: pointer;
 
 .mensaje{
     width: 325px;
-    height: 116px;
+    /* height: 116px; */
     background-color: #F1F3F6;
     border-radius: 12px;
     margin-left: 20px;
@@ -117,8 +119,10 @@ cursor: pointer;
 
 .feed .cuerpoMensaje{
     
-    display: flex;
+    /* display: flex; */
     max-width: 300px;
+    
+    
 }
 
 .feed .cuerpoMensaje .botones{
@@ -133,7 +137,7 @@ cursor: pointer;
 }
 
 #textoMensaje{
-    
+    margin-top: -.5em;
     margin-left: 1em;
     margin-bottom: 1em;
     font-size: 1em;

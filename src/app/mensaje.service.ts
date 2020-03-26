@@ -23,8 +23,8 @@ export class MensajeService {
   }
 
   deleteById(mensaje) {
-    let httpOptions = {
-      headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json', 'user-token': localStorage.getItem('user-token') }),
       body: { id: mensaje }
     };
     return this.httpClient.delete(`${this.baseUrl}`, httpOptions).toPromise();
