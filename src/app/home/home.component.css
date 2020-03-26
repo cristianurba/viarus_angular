@@ -35,7 +35,7 @@
     color: #3A4276;
 }
 
-.writeNews{
+.mensaje{
     width: 325px;
     height: 116px;
     background-color: #F1F3F6;
@@ -45,7 +45,7 @@
     
 }
 
-.writeNews input{
+.mensaje input{
     margin-top: 1.3em;
     margin-left: 1.5em;
     height: 80px;
@@ -57,7 +57,7 @@
     color: #3A4276;
 }
 
-.writeNews button{
+#enviaMensaje{
     position: absolute;
     width: 48px;
     height: 48px;
@@ -69,3 +69,67 @@
     
     background-color: #91D487;
 }
+
+.stories{
+    margin-top: 2em;
+    overflow-y: auto;
+    margin-bottom: 2em;
+}
+
+.stories label{
+    margin-left: 20px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #3A4276;
+}
+
+.stories .feed{
+    display: inline-block;
+    position: relative;
+}
+.stories .feed .autor{
+    display: flex;
+    flex-wrap: nowrap;
+    width: 250px;
+    /* border: 2px solid green */
+}
+.stories .feed img{
+    /* margin: 1em 1em 0em 1em; */
+}
+
+.feed .autor h4{
+    margin-left: .2em;
+    margin-top: 1em;    
+}
+
+.autor #avatar{
+    width: 2em;
+    height: 2em;
+    margin: 10px 14px 0 14px;
+}
+
+.feed .cuerpoMensaje{
+    
+    display: flex;
+    max-width: 300px;
+}
+
+.feed .cuerpoMensaje .botones{
+    position: absolute;
+    right: .6em;
+    top: .6em;
+    /* margin-left: 2em; */
+}
+
+.cuerpoMensaje .botones img{
+    margin-left: .6em
+}
+
+#textoMensaje{
+    
+    margin-left: 1em;
+    margin-bottom: 1em;
+    font-size: 1em;
+    color: #3A4276;
+}
+

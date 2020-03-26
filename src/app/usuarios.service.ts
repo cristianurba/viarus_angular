@@ -16,5 +16,8 @@ export class UsuariosService {
     return this.httpClient.post(`${this.baseUrl}/register`, formValues).toPromise();
   }
 
+  login(formValues) {
+    return this.httpClient.post(`${this.baseUrl}/login`, formValues).toPromise();
+  }
 
 }
