@@ -1,0 +1,22 @@
+Listado de URL de las imagenes
+
+chica_1
+https://imgur.com/7d92ybd.png
+chica_2
+https://imgur.com/Wfc0eXa.png
+chica_3
+https://imgur.com/bZzsctg.png
+chica_4
+https://imgur.com/sCF4lm8.png
+chica_5
+https://imgur.com/JGUD9AV.png
+chica_6
+https://imgur.com/h3xiNd4.png
+chico_1
+https://imgur.com/KUfJxXx.png
+chico_2
+https://imgur.com/3BDbj1x.png
+chico_3
+https://imgur.com/SqnLu84.png
+chico_4
+https://imgur.com/SwwGuDA.png

@@ -17,7 +17,7 @@ export class PerfilComponent implements OnInit {
   imagenSeleccionada: string;
 
   constructor(private usuariosService: UsuariosService) {
-    this.imagenSeleccionada = "chica_1.svg";
+    this.imagenSeleccionada = "{{}}";
     this.registro = new FormGroup({
       name: new FormControl('', [
         Validators.required,

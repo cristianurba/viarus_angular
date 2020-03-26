@@ -6,7 +6,7 @@
 
     <div class="formRegistro">
         <div class="avatar">
-            <img src="../../assets/images/avatares/{{imagenSeleccionada}}" alt="">
+            <img src="https://imgur.com/{{imagenSeleccionada}}" alt="">
         </div>
         <form [formGroup]="registro" (ngSubmit)="onSubmit()">
             <div>
@@ -17,12 +17,21 @@
                 <select (change)="handleChange($event)" name="image" class="form-control" formControlName="image"
                     placeholder="Elige tu avatar">
 
-                    <option value="chica_1.svg">Chica 1</option>
-                    <option value="chica_2.svg">Chica 2</option>
-                    <option value="chica_3.svg">Chica 3</option>
-                    <option value="chica_4.svg">Chica 4</option>
+                    <option value="7d92ybd.png">Chica 1</option>
+                    <option value="Wfc0eXa.png">Chica 2</option>
+                    <option value="bZzsctg.png">Chica 3</option>
+                    <option value="sCF4lm8.png">Chica 4</option>
+                    <option value="JGUD9AV.png">Chica 5</option>
+                    <option value="h3xiNd4.png">Chica 6</option>
+                    <option value="KUfJxXx.png">Chico 1</option>
+                    <option value="3BDbj1x.png">Chico 2</option>
+                    <option value="SqnLu84.png">Chico 3</option>
+                    <option value="SwwGuDA.png">Chico 4</option>
 
                 </select>
+
+
+
 
                 <!-- <input type="select" class="form-control" formControlName="avatar" placeholder="Elige tu avatar"> -->
             </div>
