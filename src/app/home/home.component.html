@@ -1,20 +1,36 @@
 <div class="container">
 
     <div class="logo">
-        <img src="../../assets/images/viarus (Stroke).svg" alt="Viarus logo">
+        <img src="../../assets/images/viarus(logo).svg" alt="Viarus logo">
     </div>
 
     <div class="mynews">
         <label>My news</label>
 
-        <div class="writeNews">
-            <input type="text" placeholder="Text your news here..." [(ngModel)]="mensaje.texto">
-            <button (click)="enviarMensaje()">+</button>
+        <div class="mensaje">
+            <input type="text" placeholder="Text your news here..." [(ngModel)]="mensaje.mensaje">
+            <button id="enviaMensaje" (click)="enviarMensaje()">+</button>
         </div>
     </div>
 
-    <div class="feed">
-        <h4>{{mensaje.autor}}</h4>
-        <p>{{mensaje.texto}}</p>
+    <div class="stories">
+        <label>Stories</label>
+
+        <div class="feed mensaje" *ngFor="let mensaje of mensajes">
+            <div class="autor">
+                <img id="avatar" src="{{mensaje.image}}" alt="chico enfermo">
+                <h4>{{mensaje.name}}</h4>
+            </div>
+            <div class="cuerpoMensaje">
+                <p id="textoMensaje">{{mensaje.mensaje}}</p>
+                <div class="botones">
+                    <img src="../../assets/images/papelera.svg" alt="Borrar Mensaje" (click)="borrarMensaje(mensaje)">
+                    <img src="../../assets/images/edited.svg" alt="Editar Mensaje" (click)="editMensaje(mensaje)">
+                </div>
+            </div>
+        </div>
+
     </div>
+
+
 </div>

@@ -1,11 +1,11 @@
 <div class="container">
 
     <div class="logo">
-        <img src="../../assets/images/viarus (Stroke).svg" alt="">
+        <img src="../../assets/images/viarus(logo).svg" alt="">
     </div>
 
     <div class="formRegistro">
-        <form [formGroup]="login" (ngSubmit)="onSubmit()">
+        <form [formGroup]="login" (ngSubmit)="onSubmit(login.value)">
 
             <div class="form-group">
                 <label for="email">Email</label>
