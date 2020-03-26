@@ -1,0 +1,84 @@
+<div class="container">
+
+    <div class="logo">
+        <img src="../../assets/images/viarus (Stroke).svg" alt="">
+    </div>
+
+    <div class="formRegistro">
+        <div class="avatar">
+            <img src="https://imgur.com/{{imagenSeleccionada}}" alt="">
+        </div>
+        <form [formGroup]="registro" (ngSubmit)="onSubmit()">
+            <div>
+                <h3>Editar mis datos</h3>
+            </div>
+            <div class="form-group">
+                <label for="image">Editar Avatar</label>
+                <select (change)="handleChange($event)" name="image" class="form-control" formControlName="image"
+                    placeholder="Elige tu avatar">
+
+                    <option value="7d92ybd.png">Chica 1</option>
+                    <option value="Wfc0eXa.png">Chica 2</option>
+                    <option value="bZzsctg.png">Chica 3</option>
+                    <option value="sCF4lm8.png">Chica 4</option>
+                    <option value="JGUD9AV.png">Chica 5</option>
+                    <option value="h3xiNd4.png">Chica 6</option>
+                    <option value="KUfJxXx.png">Chico 1</option>
+                    <option value="3BDbj1x.png">Chico 2</option>
+                    <option value="SqnLu84.png">Chico 3</option>
+                    <option value="SwwGuDA.png">Chico 4</option>
+
+                </select>
+
+
+
+
+                <!-- <input type="select" class="form-control" formControlName="avatar" placeholder="Elige tu avatar"> -->
+            </div>
+
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" formControlName="name" placeholder="Tu nombre...">
+                <p class="error" *ngIf="registro.controls.name.errors?.required && registro.controls.name.touched">
+                    El
+                    campo name es requerido</p>
+                <p class="error" *ngIf="registro.controls.name.errors?.maxlength && registro.controls.name.touched">
+                    El
+                    campo name debe tener una longitud máxima de
+                    {{ registro.controls.name.errors.maxlength.requiredLength }} caracteres y tú estás introduciendo
+                    {{ registro.controls.name.errors.maxlength.actualLength }}
+                </p>
+                <p class="error" *ngIf="registro.controls.name.errors?.minlength && registro.controls.name.touched">
+                    El
+                    campo name debe tener una longitud mínima de
+                    {{ registro.controls.name.errors.minlength.requiredLength }} caracteres y tú estás introduciendo
+                    {{ registro.controls.name.errors.minlength.actualLength }}
+                </p>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" class="form-control" formControlName="email" placeholder="Introduce tu email...">
+                <p class="error" *ngIf="registro.controls.email.errors?.pattern && registro.controls.email.touched">
+                    El email está mal escrito </p>
+            </div>
+            <div class="form-group">
+                <label for="">Password</label>
+                <input type="password" class="form-control" formControlName="password"
+                    placeholder="Introduce tu contraseña...">
+                <p class="error"
+                    *ngIf="registro.controls.password.errors?.pattern && registro.controls.password.touched">
+                    El campo password debe contener entre 4 y 12 caracteres, con al menos un número</p>
+            </div>
+            <div class="form-group">
+                <label for="">Repeat Password</label>
+                <input type="password" class="form-control" formControlName="repite_password"
+                    placeholder="Repite tu contraseña...">
+            </div>
+
+            <div class="boton">
+                <input type="submit" value="Editar mi usuario" class="botonEnviarRegistro" [disabled]="!registro.valid">
+            </div>
+        </form>
+    </div>
+</div>
