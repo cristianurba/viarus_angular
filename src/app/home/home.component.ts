@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
 
   mensaje: any;
   mensajes: Array<[]>;
+  userId: any;
 
   constructor(private mensajeService: MensajeService, private router: Router) {
     this.mensaje = {};
@@ -20,12 +21,16 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.recuperarMensajes();
+    this.userId = localStorage.getItem('userId');
   }
 
   recuperarMensajes() {
     this.mensajeService.getAll()
       .then(response => {
         console.log(response);
+        if (response.error) {
+          this.router.navigate(['/login']);
+        }
         this.mensajes = response;
       })
       .catch(err => {
@@ -49,10 +54,13 @@ export class HomeComponent implements OnInit {
   }
 
   borrarMensaje(mensaje) {
-    let mensajeId = mensaje.id;
+    const mensajeId = mensaje.id;
     this.mensajeService.deleteById(mensajeId)
       .then(response => {
         console.log(response);
+        if (response.error) {
+          this.router.navigate(['/login']);
+        }
         this.recuperarMensajes();
       })
       .catch(err => {
