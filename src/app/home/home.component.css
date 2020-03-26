@@ -22,7 +22,14 @@
     top: 27px;
     
 }
-
+.perfil img {
+    position: absolute;
+width: 50px;
+height: 50px;
+right: 35px;
+top: 60px;
+cursor: pointer;
+}
 .mynews{
     /* border: 2px solid green; */
     margin-top: 110px;
@@ -66,8 +73,8 @@
     border-radius: 50%;
     border: 1px solid transparent;
     font-size: 1.5em;
-    
     background-color: #91D487;
+    cursor: pointer;
 }
 
 .stories{
