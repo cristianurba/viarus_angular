@@ -1,10 +1,8 @@
 .container{
     width: 375px;
     height: 812px;
-     
     position: relative;
     margin: 3% auto;
-    
     border: 1px solid lightgray;
     border-radius: 12px;
     /* font-family: Arial, Helvetica, sans-serif */
@@ -19,9 +17,7 @@
 .intro{
     width: 345px;
     height: 153px;
-    
     margin: 3em auto;
-
     color: #3A4276;
 }
 
@@ -42,10 +38,10 @@
     border-radius: 10px;
     text-decoration: none;
     text-align: center;
-    
     font-size: 1em;
     font-weight: bold;
     color: #3A4276;
+    cursor: pointer;
 }
 
 #login{
@@ -57,4 +53,5 @@
     font-size: 1em;
     font-weight: bold;
     color: #3A4276;
+    cursor: pointer;
 }

@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit {
         console.log(err);
         /* this.router.navigate(['/login']); */
         this.mensajes = [];
-      })
+      });
   }
 
   enviarMensaje() {
@@ -57,8 +57,7 @@ export class HomeComponent implements OnInit {
     const mensajeId = mensaje.id;
     this.mensajeService.deleteById(mensajeId)
       .then(response => {
-        console.log(response);
-        if (response.error) {
+        console.log(response); {
           this.router.navigate(['/login']);
         }
         this.recuperarMensajes();

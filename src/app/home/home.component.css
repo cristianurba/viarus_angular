@@ -22,7 +22,7 @@
     height: 40.63px;
     left: 25px;
     top: 27px;
-    
+    cursor: pointer;
 }
 .perfil img {
     position: absolute;
@@ -129,11 +129,13 @@ cursor: pointer;
     position: absolute;
     right: .6em;
     top: .6em;
+    cursor: pointer;
     /* margin-left: 2em; */
 }
 
 .cuerpoMensaje .botones img{
-    margin-left: .6em
+    margin-left: .6em;
+    cursor: pointer;
 }
 
 #textoMensaje{

@@ -25,6 +25,7 @@
                     {{ registro.controls.name.errors.minlength.actualLength }}
                 </p>
             </div>
+
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="text" class="form-control" formControlName="email" placeholder="Introduce tu email...">
@@ -45,11 +46,31 @@
                     placeholder="Repite tu contraseña...">
             </div>
 
+            <div class="form-group">
+                <label for="image">Editar Avatar</label>
+                <select (change)="handleChange($event)" name="image" class="form-control" formControlName="image"
+                    placeholder="Elige tu avatar">
 
-            <!-- FALTA EL VALIDADOR DE REPETIR CONTRASEÑA -->
+                    <option value="7d92ybd.png">Chica 1</option>
+                    <option value="Wfc0eXa.png">Chica 2</option>
+                    <option value="bZzsctg.png">Chica 3</option>
+                    <option value="sCF4lm8.png">Chica 4</option>
+                    <option value="JGUD9AV.png">Chica 5</option>
+                    <option value="h3xiNd4.png">Chica 6</option>
+                    <option value="KUfJxXx.png">Chico 1</option>
+                    <option value="3BDbj1x.png">Chico 2</option>
+                    <option value="SqnLu84.png">Chico 3</option>
+                    <option value="SwwGuDA.png">Chico 4</option>
+
+                </select>
+            </div>
+
+            <div class="avatar">
+                <img src="https://imgur.com/{{imagenSeleccionada}}" alt="">
+            </div>
 
             <div class="boton">
-                <input type="submit" value="Register ->" class="botonEnviarRegistro" [disabled]="!registro.valid">
+                <input type="submit" value="Register ->" class="botonEnviarRegistro" [disabled]="!registro.valid ">
             </div>
         </form>
     </div>

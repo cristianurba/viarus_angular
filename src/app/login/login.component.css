@@ -71,8 +71,7 @@ top: 74px;
     /* color: #212330;
     font-weight: bold; */
     font-size: 1em;
-    
-
+    cursor: pointer;
     background: #BEE16D;
     border-radius: 10px;
 }

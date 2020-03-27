@@ -12,8 +12,12 @@ export class RegistroComponent implements OnInit {
 
   registro: FormGroup;
   errores: any[];
+  router: Router;
 
-  constructor(private usuariosService: UsuariosService, private router: Router) {
+  imagenSeleccionada: string;
+
+  constructor(private usuariosService: UsuariosService) {
+    this.imagenSeleccionada = '7d92ybd.png';
     this.registro = new FormGroup({
       name: new FormControl('', [
         Validators.required,
@@ -29,6 +33,10 @@ export class RegistroComponent implements OnInit {
         Validators.pattern(/^(?=.*\d).{4,12}$/)
       ]),
       repite_password: new FormControl('', [
+        Validators.required,
+
+      ]),
+      image: new FormControl('7d92ybd.png', [
         Validators.required,
 
       ])
@@ -63,6 +71,13 @@ export class RegistroComponent implements OnInit {
     } else {
       return { passwordvalidator: { msg: 'Las contraseñas no coinciden' } };
     }
+  }
+
+  handleChange($event) {
+
+    console.log($event.target.value);
+
+    this.imagenSeleccionada = $event.target.value;
   }
 
 }
