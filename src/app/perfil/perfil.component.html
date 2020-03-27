@@ -60,7 +60,7 @@
                 <p class="error" *ngIf="registro.controls.email.errors?.pattern && registro.controls.email.touched">
                     El email está mal escrito </p>
             </div>
-            <div class="form-group">
+            <!--  <div class="form-group">
                 <label for="">Password</label>
                 <input type="password" class="form-control" formControlName="password"
                     placeholder="Introduce tu contraseña...">
@@ -72,7 +72,7 @@
                 <label for="">Repeat Password</label>
                 <input type="password" class="form-control" formControlName="repite_password"
                     placeholder="Repite tu contraseña...">
-            </div>
+            </div> -->
 
             <div class="boton">
                 <input type="submit" value="Editar mi usuario" class="botonEnviarRegistro" [disabled]="!registro.valid">

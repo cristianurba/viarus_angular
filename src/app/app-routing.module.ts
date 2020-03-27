@@ -15,6 +15,7 @@ const routes: Routes = [
   { path: 'register', component: RegistroComponent },
   { path: 'perfil', component: PerfilComponent },
   { path: 'home', component: HomeComponent, canActivate: [LoginGuard] },
+  { path: 'profile', component: PerfilComponent },
   { path: '**', redirectTo: 'landing' }
 ];
 

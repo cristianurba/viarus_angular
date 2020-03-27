@@ -42,10 +42,11 @@ export class HomeComponent implements OnInit {
 
   enviarMensaje() {
 
-    console.log(this.mensaje);
+    /* console.log(this.mensaje); */
     this.mensajeService.escribirMensaje(this.mensaje)
       .then(response => {
         console.log(response);
+        this.mensaje = {};
         this.recuperarMensajes();
       })
       .catch(err => {
@@ -57,9 +58,7 @@ export class HomeComponent implements OnInit {
     const mensajeId = mensaje.id;
     this.mensajeService.deleteById(mensajeId)
       .then(response => {
-        console.log(response); {
-          this.router.navigate(['/login']);
-        }
+        console.log(response);
         this.recuperarMensajes();
       })
       .catch(err => {
