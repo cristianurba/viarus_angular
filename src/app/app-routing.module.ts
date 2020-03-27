@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
 import { HomeComponent } from './home/home.component';
 import { LoginGuard } from './login.guard';
+import { PerfilComponent } from './perfil/perfil.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegistroComponent },
   { path: 'home', component: HomeComponent, canActivate: [LoginGuard] },
+  { path: 'profile', component: PerfilComponent },
   { path: '**', redirectTo: 'landing' }
 ];
 

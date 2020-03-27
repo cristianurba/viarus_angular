@@ -13,38 +13,53 @@ export class PerfilComponent implements OnInit {
   registro: FormGroup;
   errores: any[];
   router: Router;
+  /* userId: any; */
+  usuario: any;
 
   imagenSeleccionada: string;
 
   constructor(private usuariosService: UsuariosService) {
-    this.imagenSeleccionada = "{{}}";
     this.registro = new FormGroup({
-      name: new FormControl('', [
-        Validators.required,
-        Validators.maxLength(15),
-        Validators.minLength(3)
-      ]),
-      email: new FormControl('', [
-        Validators.required,
-        Validators.pattern(/^\w+[\w-\.]*\@\w+((-\w+)|(\w*))\.[a-z]{2,3}$/)
-      ]),
-      password: new FormControl('', [
-        Validators.required,
-        Validators.pattern(/^(?=.*\d).{4,12}$/)
-      ]),
-      repite_password: new FormControl('', [
-        Validators.required,
+      name: new FormControl(''),
+      email: new FormControl(''),
+      image: new FormControl('')
+    });
 
-      ]),
-      image: new FormControl('', [
-        Validators.required,
-      ]),
-    }, [this.passwordValidator]);
+    this.getUser();
+
+
 
     this.errores = [];
   }
 
   ngOnInit() {
+    /* this.getUser(); */
+  }
+
+  getUser() {
+    const userId = localStorage.getItem('userId');
+    this.usuariosService.getUserbyId(userId)
+      .then(response => {
+        const user = response[0];
+        this.imagenSeleccionada = user.image;
+        this.registro = new FormGroup({
+          name: new FormControl(user.name, [
+            Validators.required,
+            Validators.maxLength(15),
+            Validators.minLength(3)
+          ]),
+          email: new FormControl(user.email, [
+            Validators.required,
+            Validators.pattern(/^\w+[\w-\.]*\@\w+((-\w+)|(\w*))\.[a-z]{2,3}$/)
+          ]),
+          image: new FormControl('', [
+            Validators.required,
+          ]),
+        });
+      })
+      .catch(err => {
+        console.log(err);
+      });
   }
 
   onSubmit() {
@@ -60,7 +75,7 @@ export class PerfilComponent implements OnInit {
 
   }
 
-  passwordValidator(form) {
+  /* passwordValidator(form) {
     const passwordValue = form.controls.password.value;
     const repitePasswordValue = form.controls.repite_password.value;
 
@@ -69,7 +84,7 @@ export class PerfilComponent implements OnInit {
     } else {
       return { passwordvalidator: { msg: 'Las contraseñas no coinciden' } };
     }
-  }
+  } */
 
   handleChange($event) {
 
