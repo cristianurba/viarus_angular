@@ -22,7 +22,6 @@ export class LoginComponent implements OnInit {
         Validators.required
       ])
     });
-
   }
 
   ngOnInit() {

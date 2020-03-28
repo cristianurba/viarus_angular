@@ -12,11 +12,11 @@ export class RegistroComponent implements OnInit {
 
   registro: FormGroup;
   errores: any[];
-  router: Router;
+  /* router: Router; */
 
   imagenSeleccionada: string;
 
-  constructor(private usuariosService: UsuariosService) {
+  constructor(private usuariosService: UsuariosService, private router: Router) {
     this.imagenSeleccionada = '7d92ybd.png';
     this.registro = new FormGroup({
       name: new FormControl('', [
@@ -49,15 +49,15 @@ export class RegistroComponent implements OnInit {
   }
 
   onSubmit() {
-    this.usuariosService.registro(this.registro.value)
-      .then(response => {
+    this.usuariosService.registro(this.registro.value).
+      then(response => {
         localStorage.setItem('user-token', response['token']);
         this.router.navigate(['/home']);
         console.log(response);
-
       })
       .catch(err => {
-        this.errores = err.error;
+        console.log(err);
+        /* this.errores = err.error; */
       });
 
   }
