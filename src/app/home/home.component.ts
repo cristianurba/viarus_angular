@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Mensaje } from './models/mensaje';
 import { MensajeService } from '../mensaje.service';
 import { Router } from '@angular/router';
 
@@ -68,6 +67,12 @@ export class HomeComponent implements OnInit {
 
   editMensaje(mensaje) {
     console.log(mensaje);
+  }
+
+  logout(): void {
+    console.log('mensaje');
+    localStorage.removeItem('user-token');
+    this.router.navigate(['/landing']);
   }
 
 }
