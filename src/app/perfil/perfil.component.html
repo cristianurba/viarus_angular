@@ -60,19 +60,6 @@
                 <p class="error" *ngIf="registro.controls.email.errors?.pattern && registro.controls.email.touched">
                     El email está mal escrito </p>
             </div>
-            <!--  <div class="form-group">
-                <label for="">Password</label>
-                <input type="password" class="form-control" formControlName="password"
-                    placeholder="Introduce tu contraseña...">
-                <p class="error"
-                    *ngIf="registro.controls.password.errors?.pattern && registro.controls.password.touched">
-                    El campo password debe contener entre 4 y 12 caracteres, con al menos un número</p>
-            </div>
-            <div class="form-group">
-                <label for="">Repeat Password</label>
-                <input type="password" class="form-control" formControlName="repite_password"
-                    placeholder="Repite tu contraseña...">
-            </div> -->
 
             <div class="boton">
                 <input type="submit" value="Editar mi usuario" class="botonEnviarRegistro" [disabled]="!registro.valid">

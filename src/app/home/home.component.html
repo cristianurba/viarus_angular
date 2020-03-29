@@ -4,12 +4,13 @@
         <img src="../../assets/images/viarus(logo).svg" alt="Viarus logo" onclick="location='/home'">
     </div>
 
-    <div class="out">
-        <img src="../../assets/images/out.svg" alt="out" (click)="logout(exit)">
-    </div>
-
-    <div class="perfil">
-        <img src="../../assets/images/user.svg" alt="perfil" onclick="location='/perfil'">
+    <div class="icons">
+        <div class="perfil">
+            <img src="../../assets/images/user.svg" alt="perfil" onclick="location='/perfil'">
+        </div>
+        <div class="out">
+            <img src="../../assets/images/out.svg" alt="out" (click)="logout(exit)">
+        </div>
     </div>
 
     <div class="mynews">
@@ -21,6 +22,7 @@
         </div>
     </div>
 
+
     <div class="stories">
         <label>Stories</label>
 
@@ -29,12 +31,11 @@
                 <img id="avatar" src="https://imgur.com/{{mensaje.image}}" alt="chico enfermo">
                 <h4>{{mensaje.name}}</h4>
             </div>
+
             <div class="cuerpoMensaje">
                 <p id="textoMensaje">{{mensaje.mensaje}}</p>
 
-
                 <div id="fechacreacion">{{mensaje.fecha_creacion | date:'dd-MM-yyy hh:mm'}}</div>
-
 
                 <div class="botones" *ngIf="mensaje.fk_usuario == userId">
                     <img src="../../assets/images/papelera.svg" alt="Borrar Mensaje" (click)="borrarMensaje(mensaje)">

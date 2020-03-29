@@ -19,7 +19,7 @@ width: 242px;
 height: 62px;
 left: 67px;
 top: 74px;
-
+cursor: pointer;
 }
 
 .container .formRegistro{
@@ -78,4 +78,58 @@ top: 74px;
 
 p.error{
     color: red;
+}
+
+/* -----------MEDIA QUERY----------- */
+
+@media (min-width: 768px) {
+    .container{
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+        border: none;
+        
+    }
+
+    .logo{
+        position: initial;
+        margin: 2em auto;
+        height: 0;
+    }
+
+.container .formRegistro{
+    position: initial;
+    margin: 7em auto;
+    width: 58.333em;
+}
+
+.formRegistro .divForm input{
+    
+}
+
+    .container .formRegistro .form-group{
+        width: 58.333em;
+        position: relative;
+        
+    }
+
+    .container .formRegistro .form-group label{
+        width: 58.333em;
+        margin: 0 8.5em;
+    }
+
+    .container .formRegistro .form-group input{
+        width: 58.333em;
+        position: relative;
+        margin: 0 12em;
+    }
+
+    .container .formRegistro .form-group select{
+        position: relative;
+        margin: 0 27em;
+    }
+
+    .boton input{
+        margin: 0 18.6em;
+    }
 }

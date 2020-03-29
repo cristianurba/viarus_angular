@@ -1,11 +1,11 @@
 <div class="container">
 
     <div class="logo">
-        <img src="../../assets/images/viarus(logo).svg" alt="">
+        <img src="../../assets/images/viarus(logo).svg" alt="" onclick="location='/landing'">
     </div>
 
     <div class="formRegistro">
-        <form [formGroup]="registro" (ngSubmit)="onSubmit(registro.value)">
+        <form class="divForm" [formGroup]="registro" (ngSubmit)="onSubmit(registro.value)">
             <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" class="form-control" formControlName="name" placeholder="Introduce tu nombre...">

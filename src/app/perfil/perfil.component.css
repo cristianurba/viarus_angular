@@ -97,3 +97,58 @@ height: 385px;
 p.error{
     color: red;
 }
+
+/* -----------MEDIA QUERY----------- */
+
+@media (min-width: 768px) {
+    .container{
+        width: 70%;
+        margin: 0 auto;
+        position: relative;
+        border: none;
+        
+    }
+
+    .avatar{
+        right: 20%;
+        top: 15%;
+    }
+
+    .container .formRegistro{
+        position: initial;
+        margin: 7em 10%;
+        width: 58.333em;
+    }
+
+    .container .formRegistro h3{
+        margin: 0 8.5em;
+    }
+
+    .container .formRegistro .form-group{
+        width: 58.333em;
+        position: relative;
+        
+    }
+
+    .container .formRegistro .form-group label{
+        width: 58.333em;
+        margin: 0 8.5em;
+    }
+
+    .container .formRegistro .form-group input{
+        width: 58.333em;
+        position: relative;
+        margin: 0 12em;
+    }
+
+    .container .formRegistro .form-group select{
+        position: relative;
+        margin: 0 27em;
+    }
+
+    .boton input{
+        margin: 0 18.6em;
+    }
+
+
+}

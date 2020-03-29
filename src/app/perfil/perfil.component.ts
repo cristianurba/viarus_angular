@@ -12,13 +12,12 @@ export class PerfilComponent implements OnInit {
 
   registro: FormGroup;
   errores: any[];
-  router: Router;
   /* userId: any; */
   usuario: any;
 
   imagenSeleccionada: string;
 
-  constructor(private usuariosService: UsuariosService) {
+  constructor(private usuariosService: UsuariosService, private router: Router) {
     this.registro = new FormGroup({
       name: new FormControl(''),
       email: new FormControl(''),
@@ -63,7 +62,11 @@ export class PerfilComponent implements OnInit {
   }
 
   onSubmit() {
-    this.usuariosService.registro(this.registro.value)
+    const userId = localStorage.getItem('userId');
+    let datos = this.registro.value;
+    datos.id = userId;
+    console.log(datos);
+    this.usuariosService.editUser(datos)
       .then(response => {
         this.router.navigate(['/home']);
         console.log(response);

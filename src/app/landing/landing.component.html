@@ -1,14 +1,17 @@
 <div class="container">
     <div class="hero">
-        <img src="../../assets/images/hero.svg" alt="">
+        <img src="../../assets/images/hero.svg" alt="" class="movil">
+        <!-- <img src="../../assets/images/virus.svg" class="noMovil"> -->
     </div>
     <div class="intro">
-        <h2>¡Bienvenido a Viarus!</h2>
-        <p>En tiempos de aislamiento tenemos que estar más conectados que nunca...</p>
-        <p>¿Aún no te has infectado?</p>
-    </div>
-    <div class="buttons">
-        <button [routerLink]="['/register']" id="register">Register</button>
-        <button [routerLink]="['/home']" id="login">Sign In</button>
+        <div class="textoIntro">
+            <h2>¡Bienvenido a Viarus!</h2>
+            <p>En tiempos de aislamiento tenemos que estar más conectados que nunca...</p>
+            <p>¿Aún no te has infectado?</p>
+        </div>
+        <div class="buttons">
+            <button [routerLink]="['/register']" id="register">Register</button>
+            <button [routerLink]="['/home']" id="login">Sign In</button>
+        </div>
     </div>
 </div>

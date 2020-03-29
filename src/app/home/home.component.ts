@@ -72,6 +72,7 @@ export class HomeComponent implements OnInit {
   logout(): void {
     console.log('mensaje');
     localStorage.removeItem('user-token');
+    localStorage.removeItem('userId');
     this.router.navigate(['/landing']);
   }
 

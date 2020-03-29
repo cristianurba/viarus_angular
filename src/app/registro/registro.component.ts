@@ -12,11 +12,11 @@ export class RegistroComponent implements OnInit {
 
   registro: FormGroup;
   errores: any[];
-  router: Router;
+
 
   imagenSeleccionada: string;
 
-  constructor(private usuariosService: UsuariosService) {
+  constructor(private usuariosService: UsuariosService, private router: Router) {
     this.imagenSeleccionada = '7d92ybd.png';
     this.registro = new FormGroup({
       name: new FormControl('', [
@@ -46,12 +46,15 @@ export class RegistroComponent implements OnInit {
   }
 
   ngOnInit() {
+    localStorage.removeItem('user-token');
+    localStorage.removeItem('userId');
   }
 
   onSubmit() {
     this.usuariosService.registro(this.registro.value)
       .then(response => {
         localStorage.setItem('user-token', response['token']);
+        localStorage.setItem('userId', response['userId']);
         this.router.navigate(['/home']);
         console.log(response);
 

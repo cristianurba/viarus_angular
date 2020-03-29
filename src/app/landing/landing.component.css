@@ -1,8 +1,10 @@
+
+
 .container{
     width: 375px;
     height: 812px;
     position: relative;
-    margin: 3% auto;
+    margin: 0 auto;
     border: 1px solid lightgray;
     border-radius: 12px;
     /* font-family: Arial, Helvetica, sans-serif */
@@ -19,6 +21,10 @@
     height: 153px;
     margin: 3em auto;
     color: #3A4276;
+}
+
+.noMovil{
+    display:none;
 }
 
 .buttons{
@@ -55,3 +61,55 @@
     color: #3A4276;
     cursor: pointer;
 }
+
+/* -----------MEDIA QUERY----------- */
+
+@media (min-width: 768px) {
+    .container{
+        width: 70%;
+        position: relative;
+        border: none;   
+    }
+
+    .movil{
+    display: none;
+    }
+
+    .hero{
+        background-image: url(../../assets/images/virus.svg);
+    height: 20em;
+    background-size: cover;
+    background-position: center center;
+
+        margin: 0 auto;
+    }
+
+    .intro{
+        width: 600px;
+        height: 153px;
+        margin: 3em auto;
+        color: #3A4276;
+        font-size: 1.5em;
+    }
+
+    .textoIntro{
+        margin-left: 2em;
+    }
+
+    .buttons{
+        display: flex;
+        flex-direction: row;
+        margin: 5em auto;
+        justify-content: center;
+        padding-left: 0;
+        font-size: .7em
+    }
+
+    #register{
+        margin-right: 1em;
+    }
+
+    #login{
+        margin-right: 1em;
+    }
+ }
