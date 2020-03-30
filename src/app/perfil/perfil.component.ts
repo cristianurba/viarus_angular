@@ -57,7 +57,7 @@ export class PerfilComponent implements OnInit {
         });
       })
       .catch(err => {
-        console.log(err);
+        this.router.navigate(['/login']);
       });
   }
 
@@ -65,29 +65,15 @@ export class PerfilComponent implements OnInit {
     const userId = localStorage.getItem('userId');
     let datos = this.registro.value;
     datos.id = userId;
-    console.log(datos);
     this.usuariosService.editUser(datos)
       .then(response => {
         this.router.navigate(['/home']);
-        console.log(response);
-
       })
       .catch(err => {
         this.errores = err.error;
       });
 
   }
-
-  /* passwordValidator(form) {
-    const passwordValue = form.controls.password.value;
-    const repitePasswordValue = form.controls.repite_password.value;
-
-    if (passwordValue === repitePasswordValue) {
-      return null;
-    } else {
-      return { passwordvalidator: { msg: 'Las contraseñas no coinciden' } };
-    }
-  } */
 
   handleChange($event) {
 
