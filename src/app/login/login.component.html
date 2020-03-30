@@ -21,6 +21,10 @@
                     El campo password debe contener entre 4 y 12 caracteres, con al menos un número</p>
             </div>
 
+            <div class="error">
+                <label for="">{{errorLogin}}</label>
+            </div>
+
 
             <div class="boton">
                 <input type="submit" value="Sign In ->" class="botonEnviarLogin" [disabled]="!login.valid">

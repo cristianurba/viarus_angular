@@ -26,7 +26,6 @@ export class HomeComponent implements OnInit {
   recuperarMensajes() {
     this.mensajeService.getAll()
       .then(response => {
-        console.log(response);
         if (response.error) {
           this.router.navigate(['/login']);
         }
@@ -57,7 +56,6 @@ export class HomeComponent implements OnInit {
     /* console.log(this.mensaje); */
     this.mensajeService.escribirMensaje(this.mensaje)
       .then(response => {
-        console.log(response);
         this.mensaje = {};
         this.recuperarMensajes();
       })
@@ -70,8 +68,12 @@ export class HomeComponent implements OnInit {
     const mensajeId = mensaje.id;
     this.mensajeService.deleteById(mensajeId)
       .then(response => {
-        console.log(response);
-        this.recuperarMensajes();
+        /* alert([response]); */
+        if (confirm('¿Estás seguro de querer borrar el mensaje?')) {
+          this.recuperarMensajes();
+        } else {
+          return null;
+        }
       })
       .catch(err => {
         console.log(err);
@@ -83,10 +85,13 @@ export class HomeComponent implements OnInit {
   }
 
   logout(): void {
-    console.log('mensaje');
-    localStorage.removeItem('user-token');
-    localStorage.removeItem('userId');
-    this.router.navigate(['/landing']);
+    if (confirm('¿Estás seguro de querer salir de Viarus?')) {
+      localStorage.removeItem('user-token');
+      localStorage.removeItem('userId');
+      this.router.navigate(['/landing']);
+    } else {
+      return null;
+    }
   }
 
 }

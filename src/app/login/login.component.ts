@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   login: FormGroup;
+  errorLogin: any;
 
   constructor(private usuariosService: UsuariosService, private router: Router) {
     this.login = new FormGroup({
@@ -30,14 +31,14 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     this.usuariosService.login(this.login.value)
       .then(response => {
-        console.log(response);
+        /* console.log(response); */
         localStorage.setItem('user-token', response['token']);
         localStorage.setItem('userId', response['userId']);
-        this.router.navigate(['/login']);
+        this.router.navigate(['/home']);
         console.log(response);
       })
       .catch(err => {
-        console.log(err);
+        this.errorLogin = err.error.msg;
 
       });
   }

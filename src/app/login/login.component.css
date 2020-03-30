@@ -80,6 +80,15 @@ p.error{
     color: red;
 }
 
+.error{
+    position: relative;
+    left: 16%;
+}
+
+.error label{
+    color: red
+}
+
 /* -----------MEDIA QUERY----------- */
 
 @media (min-width: 768px) {
@@ -101,10 +110,6 @@ p.error{
     position: initial;
     margin: 7em auto;
     width: 58.333em;
-}
-
-.formRegistro .divForm input{
-    
 }
 
     .container .formRegistro .form-group{
@@ -131,5 +136,9 @@ p.error{
 
     .boton input{
         margin: 0 18.6em;
+    }
+
+    .error{
+        left: 38%
     }
 }
