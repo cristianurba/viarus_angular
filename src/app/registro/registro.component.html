@@ -44,7 +44,11 @@
                 <label for="">Repeat Password</label>
                 <input type="password" class="form-control" formControlName="repite_password"
                     placeholder="Repite tu contraseña...">
+                <p class="error"
+                    *ngIf="registro.errors?.passwordvalidator && registro.controls.repite_password.touched">
+                    Las contraseñas no coinciden</p>
             </div>
+
 
             <div class="form-group">
                 <label for="image">Editar Avatar</label>

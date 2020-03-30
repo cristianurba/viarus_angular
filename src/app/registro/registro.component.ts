@@ -34,14 +34,16 @@ export class RegistroComponent implements OnInit {
       ]),
       repite_password: new FormControl('', [
         Validators.required,
+      ]
+      ),
 
-      ]),
       image: new FormControl('7d92ybd.png', [
         Validators.required,
 
       ])
-    }, [this.passwordValidator]);
-
+    },
+      [this.passwordValidator]
+    );
     this.errores = [];
   }
 
@@ -72,7 +74,7 @@ export class RegistroComponent implements OnInit {
     if (passwordValue === repitePasswordValue) {
       return null;
     } else {
-      return { passwordvalidator: { msg: 'Las contraseñas no coinciden' } };
+      return { passwordvalidator: true };
     }
   }
 
