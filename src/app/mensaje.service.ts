@@ -39,4 +39,14 @@ export class MensajeService {
     };
     return this.httpClient.get(`${this.baseUrl}`, httpOptions).toPromise();
   }
+
+  find(mensaje): Promise<any> {
+    console.log('FRONT', mensaje);
+
+    const httpOptions = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json', 'user-token': localStorage.getItem('user-token') })
+    };
+
+    return this.httpClient.post(`${this.baseUrl}/find`, mensaje, httpOptions).toPromise();
+  }
 }

@@ -30,10 +30,6 @@ export class UsuariosService {
   }
 
   editUser(formValues) {
-    /* const httpOptions = {
-      headers: new HttpHeaders({ 'Content-Type': 'application/json', 'user-token': localStorage.getItem('user-token') })
-    }; */
-    console.log(formValues);
     return this.httpClient.put(`${this.baseUrl}/edit`, formValues).toPromise();
   }
 }

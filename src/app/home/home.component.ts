@@ -39,6 +39,19 @@ export class HomeComponent implements OnInit {
       });
   }
 
+  buscarMensajes() {
+    this.mensajeService.find(this.mensaje)
+      .then(response => {
+        console.log('FUNCION', response);
+        this.mensajes = response;
+        this.mensaje.busqueda = '';
+      })
+      .catch(err => {
+        console.log('ERROR FUNCION', err);
+        this.mensajes = [];
+      });
+  }
+
   enviarMensaje() {
 
     /* console.log(this.mensaje); */
