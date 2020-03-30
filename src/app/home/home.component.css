@@ -42,7 +42,25 @@ margin-left: 1em;
 cursor: pointer;
 }
 
+.search{
+    position: absolute;
+    top: 6.5em;
+    left: 10em;
+}
 
+.search input{
+    border-radius: 5px;
+    border: 1px solid lightgray
+}
+
+.search img {
+    position: relative;
+width: 24px;
+height: 24px;
+margin-left: .5em;
+top: .4em;
+cursor: pointer;
+}
 
 .mynews{
     /* border: 2px solid green; */
@@ -182,9 +200,25 @@ cursor: pointer;
         height: 0;
     }
 
+    .icons{
+        right: 8%;
+        top: 3.313em
+    }
+
+    .search{
+        left: 35%;
+        top: 3.313em;
+        width: 29%;
+    }
+
+    .search input{
+        height: 2em;
+        width: 76%;
+    }
+
     #enviaMensaje{
         position: absolute;
-        left: 85%
+        left: 83%
     }
 
     .mensaje{
@@ -197,5 +231,9 @@ cursor: pointer;
 
     .stories label{
         display: block;
+    }
+
+    .cuerpoMensaje{
+        width: 80%;
     }
 }

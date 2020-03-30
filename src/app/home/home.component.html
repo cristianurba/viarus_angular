@@ -4,6 +4,11 @@
         <img src="../../assets/images/viarus(logo).svg" alt="Viarus logo" onclick="location='/home'">
     </div>
 
+    <div class="search">
+        <input type="text" placeholder="Find something here..." [(ngModel)]="mensaje.busqueda">
+        <img src="../../assets/images/search-solid.svg" (click)="buscarMensajes()">
+    </div>
+
     <div class="icons">
         <div class="perfil">
             <img src="../../assets/images/user.svg" alt="perfil" onclick="location='/perfil'">
